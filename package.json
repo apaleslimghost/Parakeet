@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "boulevard": "^2.3.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
+  "devDependencies": {
+    "@quarterto/react-server": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-server index.js"
+  }
+}
