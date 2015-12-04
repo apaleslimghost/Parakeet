@@ -5,7 +5,7 @@
     "react-dom": "^0.14.3"
   },
   "devDependencies": {
-    "@quarterto/react-server": "^1.0.0"
+    "@quarterto/react-server": "^1.3.0"
   },
   "scripts": {
     "start": "react-server index.js"
