@@ -5,9 +5,11 @@ var http = require('http');
 require("babel/register");
 
 var port = process.env.PORT || 3000;
+var routes = reactServer
+	.routeBundler('./index.js')
+	.use('_api', require('./server-routes'));
 
-http.createServer(server([
-	reactServer.routeBundler('./index.js'),
-].concat(reactServer.middleware), {}))
-.listen(port, console.log.bind(console, 'listening on', port));
+http.createServer(
+	server([routes].concat(reactServer.middleware), {})
+).listen(port, console.log.bind(console, 'listening on', port));
 
