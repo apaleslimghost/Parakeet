@@ -1,3 +1,3 @@
 module.exports = require('@quarterto/prefs')('parakeet', {
-	dbUri: 'http://localhost:3001'
+	transactionsDb: 'http://localhost:3001/transactions'
 });
