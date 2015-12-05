@@ -5,10 +5,11 @@ var route = require('boulevard').withFourOhFour(function(req) {
 		status: 404
 	};
 });
-var Test = require('./test.js');
+var Prefs = require('./prefsview.js');
+var prefs = require('./prefs.js');
 
 module.exports = route({
 	'/'(req) {
-		return <Test/>;
+		return <Prefs store={prefs} />;
 	}
 });
