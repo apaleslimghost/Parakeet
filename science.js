@@ -16,8 +16,11 @@ module.exports = class Science extends React.Component {
 	}
 
 	render() {
-		return <ul>
-			{this.recurring().map(group => <li key={group.name}>{group.name}</li>)}
-		</ul>;
+		return <div>
+			<ul>
+				{this.recurring().map(group => <li key={group.name}>{group.name} {group.perMonth}</li>)}
+			</ul>
+			{this.recurring().reduce((s, g) => s + g.perMonth, 0)}
+		</div>;
 	}
 }
