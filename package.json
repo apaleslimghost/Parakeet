@@ -7,6 +7,8 @@
     "budget-science": "^1.0.0",
     "numeral": "^1.5.3",
     "pouchdb": "^5.1.0",
+    "lodash.sum": "^3.6.2",
+    "lodash.groupby": "^3.1.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
   },
