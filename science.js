@@ -8,7 +8,7 @@ const WEEKS_PER_MONTH = 4.348125;
 
 function startOfWeek(date) {
 	var start = new Date(date);
-	start.setDate(start.getDate() - ((start.getDay() + 6) % 7))
+	start.setDate(start.getDate() - ((start.getDay() + 6) % 7));
 	return start;
 }
 
