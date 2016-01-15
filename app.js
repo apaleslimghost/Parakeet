@@ -19,7 +19,6 @@ class App {
 
 getPort((e, port) => {
   if(e) throw e;
-  global._port = port;
   server.listen(port, () => {
     console.log(`running on ${port}`);
     var a = new App({port});
