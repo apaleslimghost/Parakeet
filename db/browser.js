@@ -1,7 +1,4 @@
 var PouchDb = require('pouchdb');
-var prefs = require('../prefs');
-var db = new PouchDb('transactions')
-
-db.replicate.from(prefs.transactionsDb, {live: true});
+var db = new PouchDb(`${location.protocol}//${location.host}/_api/transactions`);
 
 module.exports = db;
