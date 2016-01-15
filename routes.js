@@ -1,10 +1,5 @@
 var React = require('react');
-var route = require('boulevard').withFourOhFour(function(req) {
-	return {
-		body: `${req.url} not found`,
-		status: 404
-	};
-});
+var route = require('@quarterto/boulevard-promise-server');
 
 var Prefs = require('./prefsview');
 var List = require('./list');
