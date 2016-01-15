@@ -10,7 +10,7 @@ class App {
 
   init() {
     this.window = new BrowserWindow(this.options);
-    this.window.loadURL(`http://localhost:${this.options.port}`);
+    this.window.loadURL(`http://localhost:${this.options.port}/science`);
     this.window.on('closed', () => {
       this.window = null;
     });

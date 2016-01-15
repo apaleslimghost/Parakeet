@@ -1,5 +1,4 @@
 var React = require('react');
-var GroupedTransactions = require('budget-science');
 var formatCurrency = require('./format-currency');
 var sum = require('lodash.sum');
 
@@ -9,7 +8,7 @@ const WEEKS_PER_MONTH = WEEKS_PER_YEAR / 12;
 
 var Science = props => <div>
 			<ul>
-				{props.groups.recurring().map(group => <li key={group.name}>{group.name} {formatCurrency(group.perMonth)}</li>)}
+				{props.groups.recurring().groups.map(group => <li key={group.name}>{group.name} {formatCurrency(group.perMonth)}</li>)}
 			</ul>
 			{formatCurrency(props.groups.sumRecurring() / WEEKS_PER_MONTH * 0.75)} per week
 
@@ -21,3 +20,5 @@ var Science = props => <div>
 				{formatCurrency(sum(props.groups.byWeek()[week], 'amount'))}
 			</div>)}
 </div>;
+
+module.exports = Science;
