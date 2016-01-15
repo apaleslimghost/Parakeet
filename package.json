@@ -14,6 +14,9 @@
     "react-dom": "^0.14.3"
   },
   "scripts": {
-    "start": "react-server index.js"
+    "start": "electron app.js"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.4"
   }
 }
