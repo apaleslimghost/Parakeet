@@ -6,7 +6,7 @@ import stepfordApi from 'stepford-api';
 var routes = reactServer.routeBundler('./routes.js');
 
 var app = express();
-app.use('_api', stepfordApi);
+app.use('/_api', stepfordApi);
 app.use(server([routes, ...reactServer.middleware]));
 
 export default app;

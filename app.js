@@ -20,7 +20,7 @@ class App {
 getPort((e, port) => {
   if(e) throw e;
   server.listen(port, () => {
-    console.log('ohai');
+    console.log(`running on ${port}`);
     var a = new App({port});
     app.on('ready', () => a.init());
     app.on('window-all-closed', function () {
