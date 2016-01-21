@@ -1,7 +1,11 @@
-import {app, BrowserWindow} from 'electron';
-import server from './server';
+import {app as electronApp, BrowserWindow} from 'electron';
+import app from './server';
+import {createServer} from 'http';
+import socketServer from './update';
 import defaults from 'lodash.defaults';
 import {getPort} from 'portfinder';
+
+var server = createServer();
 
 class App {
   constructor(options) {
@@ -10,7 +14,7 @@ class App {
 
   init() {
     this.window = new BrowserWindow(this.options);
-    this.window.loadURL(`http://localhost:${this.options.port}/science`);
+    this.window.loadURL(`http://localhost:${this.options.port}`);
     this.window.webContents.openDevTools();
     this.window.on('closed', () => {
       this.window = null;
@@ -20,20 +24,24 @@ class App {
 
 getPort((e, port) => {
   if(e) throw e;
+
+  server.on('request', app);
   server.listen(port, () => {
     console.log(`running on ${port}`);
     var a = new App({port});
-    app.on('ready', () => a.init());
-    app.on('window-all-closed', function () {
+    electronApp.on('ready', () => a.init());
+    electronApp.on('window-all-closed', function () {
       if (process.platform !== 'darwin') {
-        app.quit();
+        electronApp.quit();
       }
     });
 
-    app.on('activate', function () {
+    electronApp.on('activate', function () {
       if (a.window === null) {
         a.init();
       }
     });
   });
+
+  socketServer(server);
 });

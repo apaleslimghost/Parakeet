@@ -1,3 +1,10 @@
 module.exports = require('@quarterto/prefs')('parakeet', {
-	transactionsDb: 'http://localhost:3001/transactions'
+	sortcode: '000000',
+	account: '00000000',
+	securityCode: '0000',
+	memorableName: '',
+	birthPlace: '',
+	lastSchool: '',
+	firstSchool: '',
+	memorableDate: '1970-01-01'
 });

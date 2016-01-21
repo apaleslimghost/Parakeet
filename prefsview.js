@@ -16,6 +16,7 @@ module.exports = class Prefs extends React.Component {
 
 	change(key) {
 		return (ev) => {
+			console.log(key);
 			this.props.store[key] = ev.target.value;
 		};
 	}
