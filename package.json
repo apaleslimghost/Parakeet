@@ -18,7 +18,8 @@
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "server-sent-events": "0.0.4",
-    "stepford-api": "^1.0.1"
+    "stepford-api": "^1.0.1",
+    "ws": "^1.0.1"
   },
   "scripts": {
     "start": "electron bootstrap.js"
